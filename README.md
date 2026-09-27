@@ -13,7 +13,7 @@ queues, a BST/AVL tree, hashing, and graph traversal (BFS/DFS).
 | Name | Student ID | Responsibility | Individual Contribution |
 |------|-----------|-----------------|--------------------------|
 | M.K.Umar Mohamed | 23DA2-0501 | Linked list – student record management | [Implemented the custom singly linked list (Node, StudentLinkedList) and Student record class from scratch. Built add, update, delete, search, and display operations with input validation (duplicate ID checks, marks range, empty fields). Tested independently before integration.|
-| [Name] | [ID] | Stack & queue implementation | [describe] |
+| H.F.F Hamna| 23da2-0479| Stack & queue implementation | Implemented the stack and queue functionality. The stack records recent actions using LIFO behaviour, while the queue manages service requests using FIFO behaviour and Add service requests,Process request,Display recent actions|
 | [Name] | [ID] | BST/AVL tree & hashing/search | [describe] |
 | [Name] | [ID] | Graph, campus locations/connections, BFS/DFS | [describe] |
 
