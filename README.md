@@ -15,7 +15,8 @@ queues, a BST/AVL tree, hashing, and graph traversal (BFS/DFS).
 | M.K.Umar Mohamed | 23DA2-0501 | Linked list – student record management | [Implemented the custom singly linked list (Node, StudentLinkedList) and Student record class from scratch. Built add, update, delete, search, and display operations with input validation (duplicate ID checks, marks range, empty fields). Tested independently before integration.|
 | [Name] | [ID] | Stack & queue implementation | [describe] |
 | MA.Aabith Nihmy  | 23da2-0538 | BST/AVL tree & hashing/search | I worked on a university management system in Java. My contribution is the student record component, which uses a custom linked list for record management and a hash map for fast ID searches. The project also includes a campus graph for representing locations and their road connections |
-| [Name] | [ID] | Graph, campus locations/connections, BFS/DFS | [describe] |
+| [S.A.M.SEYED ASLIFF AHAMED MOULANA] | [23DA2-0609] | Graph, campus locations/connections, BFS/DFS | [I worked on the Campus Graph component of the university management system in Java. My contribution represents campus locations and their connections using a graph structure. I implemented functions to add and remove campus locations, add and remove connections, display connections, and perform Breadth-First Search (BFS) traversal.
+] |
 
 *(All members: integration, validation, testing, debugging, documentation, GitHub collaboration.)*
 
