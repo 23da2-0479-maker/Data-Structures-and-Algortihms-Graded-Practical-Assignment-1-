@@ -4,8 +4,11 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         StudentLinkedList studentList = new StudentLinkedList();
+ campus-graph
+        CampusGraph campusGraph = new CampusGraph();
         ActionStack actions = new ActionStack();          // MEMBER 2
         ServiceQueue requests = new ServiceQueue();       // MEMBER 2
+ main
         boolean running = true;
 
         while (running) {
@@ -14,9 +17,18 @@ public class Main {
             System.out.println("2. Update Student Record");
             System.out.println("3. Delete Student Record");
             System.out.println("4. Display All Records (Linked List)");
+ campus-graph
+            System.out.println("5. Add Campus Location");
+            System.out.println("6. Remove Campus Location");
+            System.out.println("7. Add Campus Connection");
+            System.out.println("8. Remove Campus Connection");
+            System.out.println("9. Display Campus Connections");
+            System.out.println("10. BFS Campus Traversal");
+
             System.out.println("5. Add Service Request to Queue");          // MEMBER 2
             System.out.println("6. Process Next Service Request");          // MEMBER 2
             System.out.println("7. Display Recent Actions using Stack");    // MEMBER 2
+ main
             System.out.println("16. Exit");
             System.out.print("Enter your choice: ");
 
@@ -29,6 +41,69 @@ public class Main {
             }
 
             switch (choice) {
+                case 5:
+                    System.out.print("Enter campus location: ");
+                    String location = sc.nextLine().trim();
+
+                    if (campusGraph.addLocation(location)) {
+                        System.out.println("Campus location added successfully.");
+                    } else {
+                        System.out.println("Unable to add campus location.");
+                    }
+                    break;
+                
+                case 6:
+                    System.out.print("Enter campus location to remove: ");
+                    String removeLocation = sc.nextLine().trim();
+
+                    if (campusGraph.removeLocation(removeLocation)) {
+                        System.out.println("Campus location removed successfully.");
+                    } else {
+                         System.out.println("Campus location not found.");
+                    }
+                    break;
+                
+                case 7:
+                    System.out.print("Enter first campus location: ");
+                    String locationA = sc.nextLine().trim();
+
+                    System.out.print("Enter second campus location: ");
+                    String locationB = sc.nextLine().trim();
+
+                    if (campusGraph.addConnection(locationA, locationB)) {
+                        System.out.println("Campus connection added successfully.");
+                    } else {
+                        System.out.println("Unable to add campus connection.");
+                    }
+                    break;
+
+                case 8:
+                    System.out.print("Enter first campus location: ");
+                    String removeA = sc.nextLine().trim();
+
+                    System.out.print("Enter second campus location: ");
+                    String removeB = sc.nextLine().trim();
+
+                    if (campusGraph.removeConnection(removeA, removeB)) {
+                        System.out.println("Campus connection removed successfully.");
+                    } else {
+                        System.out.println("Campus connection not found.");
+                    }
+                    break;
+
+                case 9:
+                    
+                    System.out.println("\n===== Campus Connections =====");
+                    campusGraph.displayConnections();
+                    break;
+
+                case 10:
+                    System.out.print("Enter starting campus location for BFS: ");
+                    String startLocation = sc.nextLine().trim();
+
+                    campusGraph.bfs(startLocation);
+                    break;
+
                 case 1:
                     System.out.print("Enter Student ID: ");
                     String id = sc.nextLine().trim();
