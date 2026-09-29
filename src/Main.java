@@ -7,6 +7,8 @@ public class Main {
         CampusGraph campusGraph = new CampusGraph();      // MEMBER 4
         ActionStack actions = new ActionStack();          // MEMBER 2
         ServiceQueue requests = new ServiceQueue();       // MEMBER 2
+        StudentBST bst = new StudentBST();                // MEMBER 3
+        StudentHashTable hashTable = new StudentHashTable(); // MEMBER 3
         boolean running = true;
 
         while (running) {
@@ -18,6 +20,8 @@ public class Main {
             System.out.println("5. Add Service Request to Queue");          // MEMBER 2
             System.out.println("6. Process Next Service Request");          // MEMBER 2
             System.out.println("7. Display Recent Actions using Stack");    // MEMBER 2
+            System.out.println("8. Display Students using BST/AVL");        // MEMBER 3
+            System.out.println("9. Search Student using Hashing");          // MEMBER 3
             System.out.println("10. Add Campus Location");                  // MEMBER 4
             System.out.println("11. Remove Campus Location");               // MEMBER 4
             System.out.println("12. Add Campus Connection/Road");           // MEMBER 4
@@ -52,6 +56,11 @@ public class Main {
                         break;
                     }
                     studentList.addStudent(id, name, programme, marks);
+                    Student addedStudent = studentList.searchById(id);
+                    if (addedStudent != null) {
+                        bst.insert(addedStudent);                          // MEMBER 3
+                        hashTable.put(id, addedStudent);                   // MEMBER 3
+                    }
                     actions.push("Added student " + id);                   // MEMBER 2
                     break;
 
@@ -84,6 +93,8 @@ public class Main {
                     System.out.print("Enter Student ID to delete: ");
                     String deleteId = sc.nextLine().trim();
                     studentList.deleteStudent(deleteId);
+                    bst.delete(deleteId);                                  // MEMBER 3
+                    hashTable.remove(deleteId);                            // MEMBER 3
                     actions.push("Deleted student " + deleteId);           // MEMBER 2
                     break;
 
@@ -117,6 +128,22 @@ public class Main {
 
                 case 7:                                                    // MEMBER 2
                     actions.display();
+                    break;
+
+                case 8:                                                    // MEMBER 3
+                    System.out.println("\n--- Students organized by ID (BST In-Order) ---");
+                    bst.displayInOrder();
+                    break;
+
+                case 9:                                                    // MEMBER 3
+                    System.out.print("Enter Student ID to search (Hashing): ");
+                    String searchId = sc.nextLine().trim();
+                    Student found = hashTable.get(searchId);
+                    if (found != null) {
+                        System.out.println("Student found: " + found);
+                    } else {
+                        System.out.println("Student not found.");
+                    }
                     break;
 
                 case 10:                                                   // MEMBER 4
