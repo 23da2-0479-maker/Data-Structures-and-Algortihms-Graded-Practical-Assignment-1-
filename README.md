@@ -76,9 +76,6 @@ README.md
 - Branches, commits, and pull requests used across all components.
 - Commit history reflects each member's individual contribution.
 
-## Demo Video
-One merged demo video (< 15 minutes) with all members' faces visible,
-showing each member's contribution.
+## GitHub Repository
+https://github.com/umarmohamed-02/Data-Structures-and-Algortihms-Graded-Practical-Assignment-1-
 
-## Deadline
-29th September (via designated LMS submission link).
