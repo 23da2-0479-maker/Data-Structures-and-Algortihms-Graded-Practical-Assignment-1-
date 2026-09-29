@@ -12,11 +12,10 @@ queues, a BST/AVL tree, hashing, and graph traversal (BFS/DFS).
 
 | Name | Student ID | Responsibility | Individual Contribution |
 |------|-----------|-----------------|--------------------------|
-| M.K.Umar Mohamed | 23DA2-0501 | Linked list – student record management | [Implemented the custom singly linked list (Node, StudentLinkedList) and Student record class from scratch. Built add, update, delete, search, and display operations with input validation (duplicate ID checks, marks range, empty fields). Tested independently before integration.|
-| H.F.F Hamna | [23DA2-0480 | Stack & queue implementation | Implemented action stack and student service request queue |
-| MA.Aabith Nihmy  | 23da2-0538 | BST/AVL tree & hashing/search | I worked on a university management system in Java. My contribution is the student record component, which uses a custom linked list for record management and a hash map for fast ID searches. The project also includes a campus graph for representing locations and their road connections |
-| [S.A.M.SEYED ASLIFF AHAMED MOULANA] | [23DA2-0609] | Graph, campus locations/connections, BFS/DFS | [I worked on the Campus Graph component of the university management system in Java. My contribution represents campus locations and their connections using a graph structure. I implemented functions to add and remove campus locations, add and remove connections, display connections, and perform Breadth-First Search (BFS) traversal.
-] |
+| M.K.Umar Mohamed | 23DA2-0501 | Linked list – student record management | Implemented the custom singly linked list (Node, StudentLinkedList) and Student record class from scratch. Built add, update, delete, search, and display operations with input validation (duplicate ID checks, marks range, empty fields). Tested independently before integration. |
+| H.F.F Hamna | 23DA2-0480 | Stack & queue implementation | Implemented ActionStack (push, pop, peek, display) for tracking recent actions and ServiceQueue (enqueue, dequeue, display) for managing student service requests in FIFO order. Both built from scratch using linked-list-based nodes. |
+| MA.Aabith Nihmy | 23DA2-0538 | BST/AVL tree & hashing/search | Implemented StudentBST (Binary Search Tree) to organize and display student records sorted by Student ID using in-order traversal. Implemented StudentHashTable with separate chaining for O(1) average-case student ID lookups. Integrated both into the main menu (options 8 and 9). |
+| S.A.M.Seyed Asliff Ahamed Moulana | 23DA2-0609 | Graph, campus locations/connections, BFS/DFS | Implemented the CampusGraph component using an adjacency list to represent campus locations and their connections. Built functions to add/remove locations and connections, display the campus network, and perform Breadth-First Search (BFS) traversal. |
 
 *(All members: integration, validation, testing, debugging, documentation, GitHub collaboration.)*
 
@@ -24,11 +23,11 @@ queues, a BST/AVL tree, hashing, and graph traversal (BFS/DFS).
 - Add / update / delete / search / display student records (Linked List)
 - Undo / recent-actions history (Stack)
 - Student service request queue (Queue)
-- Student records organized/searched by ID (BST or AVL Tree)
+- Student records organized/searched by ID (BST)
 - Fast student ID lookup (Hashing)
-- Campus locations and connections modeled as a Graph (adjacency list/matrix)
+- Campus locations and connections modeled as a Graph (adjacency list)
 - Add/remove locations and connections; display campus network
-- Graph traversal via BFS or DFS
+- Graph traversal via BFS
 - Menu-driven console interface with input validation
 
 ## Menu
@@ -46,7 +45,7 @@ queues, a BST/AVL tree, hashing, and graph traversal (BFS/DFS).
 12. Add Campus Connection/Road
 13. Remove Campus Connection/Road
 14. Display Campus Connections
-15. Traverse Campus Locations (BFS/DFS)
+15. Traverse Campus Locations (BFS)
 16. Exit
 
 ## Tech Stack
@@ -54,22 +53,22 @@ queues, a BST/AVL tree, hashing, and graph traversal (BFS/DFS).
 
 ## How to Run
 ```
-javac -d bin src/**/*.java
+javac -d bin src/*.java
 java -cp bin Main
 ```
-*(Adjust paths/main class name to match the actual project structure.)*
 
 ## Project Structure
 ```
 src/
-  ├── model/          # Student, Location, etc.
-  ├── linkedlist/      
-  ├── stack/
-  ├── queue/
-  ├── tree/            # BST/AVL
-  ├── hashing/
-  ├── graph/
-  └── Main.java
+  ├── Student.java            # Student record model
+  ├── Node.java               # Linked list node
+  ├── StudentLinkedList.java   # Linked list (Member 1)
+  ├── ActionStack.java         # Stack for recent actions (Member 2)
+  ├── ServiceQueue.java        # Queue for service requests (Member 2)
+  ├── StudentBST.java          # Binary Search Tree (Member 3)
+  ├── StudentHashTable.java    # Hash Table for fast lookup (Member 3)
+  ├── CampusGraph.java         # Graph with BFS traversal (Member 4)
+  └── Main.java                # Menu-driven console interface
 README.md
 ```
 
